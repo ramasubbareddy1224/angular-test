@@ -1,0 +1,25 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+     {{ title }}
+  </h1>
+  <span>
+   type user
+  </span>
+  <input type="text" [(ngModel)]="username"> &nbsp;
+   <button (click)="searchUser()">Search</button>    
+   
+   <div *ngIf="userList.length > 0">
+       <br/>
+        The following Search Result are : 
+        <ul *ngFor="let user of userList">
+          <li>{{user.name}}</li>
+        </ul>
+   </div>
+
+   <p *ngIf="isSearchClicked && userList.length == 0">
+     No data found
+   </p>
+
+</div>
+<router-outlet></router-outlet>
